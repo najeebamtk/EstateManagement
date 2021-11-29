@@ -25,3 +25,6 @@ Route::get('contact', function () {
 Route::get('form', function () {
     return view('form');
 });
+Route::get('work', function () {
+    return view('work');
+});

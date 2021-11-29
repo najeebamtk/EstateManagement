@@ -13,8 +13,11 @@
     <a href="{{url('about')}}">ABOUT</a>&nbsp;&nbsp;
     <a href="{{url('contact')}}">CONTACT</a>&nbsp;&nbsp;
     <a href="{{url('form')}}">FORM</a>&nbsp;&nbsp;<br>
+    <a href="{{url('work')}}">WORK</a>&nbsp;&nbsp;<br>
+
     <img src="{{asset('images/logo.png')}}">
     <img src="{{asset('images/1.jpg')}}" width="400" height="400">
+
 
 </body>
 </html>
