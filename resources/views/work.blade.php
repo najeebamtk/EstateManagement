@@ -8,5 +8,7 @@
 </head>
 <body>
     <h1>WORK PAGE</h1>
+    <img src="{{asset('images/5.jpg')}}">
+
 </body>
 </html>
