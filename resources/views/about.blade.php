@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>ABOUT</h1
+    <h1>ABOUT</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, quam eveniet reiciendis placeat libero enim ipsa amet tempora earum labore quas perferendis sunt maiores, quos hic. Quaerat explicabo molestiae cupiditate!</p>
 </body>
 </html>
