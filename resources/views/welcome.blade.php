@@ -17,6 +17,7 @@
 
     <img src="{{asset('images/logo.png')}}">
     <img src="{{asset('images/1.jpg')}}" width="400" height="400">
+    
 
 
 </body>
