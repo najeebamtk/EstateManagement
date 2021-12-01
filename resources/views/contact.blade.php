@@ -7,6 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>CONTACT</h1
+    <h1>CONTACT</h1>
+    <br>
+    <h2>DETAILS</h2>
 </body>
 </html>
