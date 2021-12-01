@@ -10,6 +10,6 @@
     <h1>CONTACT</h1>
     <br>
     <h2>DETAILS</h2>
-    <a href="https://assets.bosch.com/media/global/contact/bosch-contact.jpg"></a>
+<img src="https://assets.bosch.com/media/global/contact/bosch-contact.jpg">
 </body>
 </html>
