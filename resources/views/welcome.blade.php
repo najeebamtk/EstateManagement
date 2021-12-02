@@ -17,7 +17,7 @@
 
     <img src="{{asset('images/logo.png')}}">
     <img src="{{asset('images/1.jpg')}}" width="400" height="400">
-    
+    <img src="https://assets.bosch.com/media/global/contact/bosch-contact.jpg" height="300" width="300">
 
 
 </body>
