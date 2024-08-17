@@ -83,50 +83,13 @@
         @endif
         <div class="text-block text-center my-3">
                     <span class="text-small font-weight-semibold">Already a member ?</span>
-                    <a href="#" onclick="root()" class="text-blue text-small ">Login to your account</a>
+                    <a href="/login" class="text-blue text-small ">Login to your account</a>
                   </div>
          
           </form> 
         </div>
       </div>
     </div>
-
-
-    
-    
-    <div class="card-body py-5 px-md-5" style="display:none" id="log"> 
-
-<div class="row d-flex justify-content-center">
-  <div class="col-lg-12">
-    <h2 class="fw-bold mb-5">User Login </h2>
-    <form id="login" method="post" action="{{('login')}}">
-      @csrf
-      <!-- 2 column grid layout with text inputs for the first and last names -->
-      <div class="row">
-        <div class="col-md-6 mb-4">
-          <div class="form-outline">
-          <label class="form-label" for="form3Example3">Email address</label>
-          <input type="email" id="email1" class="form-control" name="email1">
-          </div>
-          <div class="form-outline mb-4">
-          <label class="form-label" for="form3Example4">Password</label>
-              <input type="password" id="password1" class="form-control" name="password1">
-            </div>
-            <button type="submit" class="btn btn-primary btn-block mb-4">
-              Login
-            </button>
-            @if(isset($message))
-        <p>{{$message}}</p>
-        @endif
-        <div class="text-block text-center my-3">
-                    <span class="text-small font-weight-semibold">Not a member ?</span>
-                    <a href="#" onclick="roots()" class="text-blue text-small ">Create new account</a>
-                  </div>
-  </form>
-  </div>
-        </div>
-        
-  </div>
 
   </div>
 </section>
@@ -177,61 +140,9 @@
                   })
 
 
-                  $().ready(function(){
-                $('#login').validate({
-                    errorClass:'text-danger',
-                    rules:{
-                      email1:{
-                            required:true,
-                            email:true
-                        },
-                        password1:"required"
-                    },
-                    messages:{
-                      email1:{
-                            required:"email is mandatory",
-                            email:"please enter valid email"
-                        },
-                        password1:"password is mandatory"
-                      }
-                    });
-                  })
-
-                  function root(){
-                    var x = document.getElementById("log");
-                    var y=document.getElementById("sign");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-    y.style.display = "none";
-  } else {
-    x.style.display = "none";
-    y.style.display = "block";
-  }
-  
-
-                  }
-
-                  function roots(){
-                    var x = document.getElementById("sign");
-                    var y=document.getElementById("log");
-
-  if (x.style.display === "none") {
-    x.style.display = "block";
-    y.style.display = "none";
-
-  } else {
-    x.style.display = "none";
-    y.style.display = "block";
-
-  }
-                  }
-
-
           </script>
 
 
 
 </body>
 </html>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-

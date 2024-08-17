@@ -16,7 +16,10 @@ use App\Http\Controllers\UserController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('login', function () {
+    return view ('login');
+});
+Route::get('/',[SampleController::class,'FnViewLogin']);
 Route::get('usersignup', function () {
     return view ('usersignup');
 });

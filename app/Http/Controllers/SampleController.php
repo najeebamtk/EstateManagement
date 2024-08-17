@@ -10,14 +10,28 @@ use App\Models\ContactAdmin;
 use App\Models\PImage;
 use App\Models\Property;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
+
 
 class SampleController extends Controller
 {
+
+    function FnViewLogin(){
+        if (Auth::check()) {
+            return redirect('/home');
+        } else {
+            return redirect('/login');
+        }
+    }
     function FnAddUser(Request $request ){
         $finame=$request->fname;
         $laname=$request->lname;
         $email=$request->email;
         $password=$request->password;
+        $client=Client::where('email',$email)->first();
+        if ($client) {
+            return view('usersignup',['message'=>'Email already registered']);
+        }
         $clientobj=new Client([
             'fname'=>$finame,
             'lname'=>$laname,
@@ -35,20 +49,16 @@ class SampleController extends Controller
         }
     }
     function FnLogin(Request $request){
-        $email=$request->email1;
-        $password=$request->password1;
-        $client=Client::where('email',$email)->where('password',$password)->first();
-        if(is_null($client)){
-
-            return view('login',['message'=>'not exist']);
-            
-    }
-    elseif($client){
-        $request->session()->put('loginid',$client->id);
-        $images=PImage::orderBy('created_at','DESC')->get();
-        $propertys=Property::orderBy('created_at','DESC')->take(3)->get();
-        return view('welcome',['images'=>$images,'propertys'=>$propertys]);  
-    }
+        $email=$request->username;
+        $password=$request->password;
+        $client=Client::where('email',$email)->first();
+        if ($client && Hash::check($password, $client->password)) {
+            $request->session()->put('loginid',$client->id);
+            return redirect('home'); 
+        }
+        else { 
+            return view('login', ['message'=>'Invalid username or password']); 
+        }
 
     }
     function FnAddAgent(Request $request){

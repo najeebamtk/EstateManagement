@@ -22,7 +22,7 @@ class UserController extends Controller
                 $this->array['user']=Client::where('id',$sessionid)->first();
             }
             else{
-                echo "please login";die();
+                return redirect('/login');
             }
             return $next($request);
         });
@@ -117,7 +117,7 @@ class UserController extends Controller
     function FnUserLogout(){
         session()->forget('loginid');
         session()->flush();
-        return redirect('usersignup');
+        return redirect('login');
     }
     function FnUserProfile(){
         $userid=session()->get('loginid');
